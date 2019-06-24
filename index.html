@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Julio Vinachi / Web Developer Full-Stack</title>
+	<style>
+		*,::before, ::after{
+			box-sizing: border-box;
+			overflow: hidden;
+		}
+		body{
+			margin: 0;
+			min-height: 100vh;
+			overflow-x: hidden;
+			line-height: 1.5;
+			font: 780 62.5% tahoma;
+			display: grid;
+			grid-template-columns: minmax(150px,auto) minmax(200px, auto) 1fr;
+			grid-template-rows: 1fr;
+			color: #21213d;
+			 
+			background-image: url('https://avatars3.githubusercontent.com/u/2575745?s=460&v=4');
+			background-position: 97% 14vh;
+			background-repeat: no-repeat;
+			background-size: auto 87vh;
+			
+		}
+		.aside{
+			padding: 1em;
+			padding-bottom: 4.5em;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.trigeger{
+			position: relative;
+			z-index: 2;
+		}
+		.social{
+			font-family: tahoma;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+		.social ul{
+			list-style: none;
+			margin: 0px;
+			padding: 0px;
+		}
+		.social ul li{
+			margin: 0.25em;
+			padding: 1em;
+			writing-mode: vertical-rl;
+			transform: rotate(180deg);
+			font-size: 1rem;
+		}
+		.social ul li a{
+			text-decoration: none;
+			color: #21213d;
+		}
+		.social ul li a:hover{
+			color: #f00;
+		}
+		.title{
+			position: relative;
+			padding-bottom: 1.2em;
+			height: 100%;
+			text-transform: uppercase;
+			white-space: nowrap;
+			font-size: 2.3rem;
+			writing-mode: vertical-rl;
+			transform: rotate(180deg);
+			user-select: none;
+			pointer-events: none;
+			pointer-events: none;
+			margin-top: -40px;
+		}
+
+		.title h1{
+			position: relative;
+			top: 0.5em;
+			margin: auto;
+			font-family: tahoma;
+		}
+		
+		.title span{
+			position: relative;
+			top: 1em;
+			left: 0.55em;
+			z-index: -1;
+			display: block;
+			width: auto;
+			background-color: transparent;
+			font-family: tahoma;
+			color: transparent;
+			background-image: linear-gradient(-90deg,#f00,#c8305f);
+			-webkit-background-clip: text;
+			background-clip: text;
+		}
+
+		.content{
+			position: relative;
+			overflow: hidden;
+			padding-bottom: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-start;
+			font-size: 1rem;
+		}
+
+		.content .about{
+			width: 75%;			
+		}
+
+		.content .about .sitename{
+			font-family: tahoma;
+			letter-spacing: 2px;
+		}
+		.content .about .sitename span{
+			display: block;
+		}
+		.content .about .desc{
+			list-style: none;
+			padding: 0;
+			margin-bottom: 1.5em;
+		}
+		.content .about button{
+			padding: 5px;
+			border: 0;
+			border-radius: 0.35em;
+			background-color: transparent;
+			background-image: linear-gradient(-90deg, #f00,#c8305f);
+			cursor: pointer;
+			transition: all 200ms cubic-bezier(0.57, 0.21, 0.69, 3.25);
+			will-change: transform;
+
+		}
+
+		.content .about button:focus{
+			outline: none;
+		}
+
+		.content .about button span{
+			display: block;
+			padding: 1em 2em;
+			width: 100%;
+			font-size: 1rem;
+			font-weight: 600;
+			border-radius: 0.15em;
+			background-color: white;
+			color: #f00;
+		}
+		.content .about button:hover{
+			transform: scale(0.95);
+		}
+		.content .about button:hover span{
+			background-color: transparent;
+			color: white;
+		}
+		.content .concept{
+			display: flex;
+			width: 100%;
+			flex-direction: column;
+			justify-content: flex-end;
+		}
+		.content .concept .num{
+			position: relative;
+			margin: 0;
+			font-size: 12rem;
+			font-family: tahoma;
+			color: transparent;
+			background-image: linear-gradient(-90deg,#f00,#c8305f);
+			-webkit-background-clip: text;
+			background-clip: text;
+			margin-top: -80px;
+			margin-bottom: -10px; 
+		}
+		.menu{
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 1;
+			transform: translate(100%, -100%);
+			transform-origin: 100% 0%;
+			display: flex;
+			width: 100%;
+			height: 100%;
+			justify-content: center;
+			align-items: center;
+			background-color: #c8305f;
+			background-image: linear-gradient(-90deg,#f00,#c8305f);
+			border-bottom-left-radius: 40%;
+			transition: transform 300ms linear, border-radius 200ms 300ms ease;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+		.menu ul{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display:flex;
+			flex-direction: column;
+		}
+
+		.menu ul li{
+			position: relative;
+			font-size: 3rem;
+			color: white;
+			transition: transform 200ms 0ms cubic-bezier(0.57,0.21,0.59,0.35);
+			cursor: pointer;
+		}
+		.menu ul li:before{
+			position: absolute;
+			top: 50%;
+			left: -5%;
+			transform: translateY(50%);
+			z-index: -1;
+			width: 0;
+			height: 20%;
+			content: "";
+			background-color: white;
+			opacity: 0.3;
+			transform: all 400ms ease;
+		}
+
+		.menu ul li:hover{
+			transform: translateX(10px);
+		}
+
+		.menu ul li::hover::before{
+			width: 70%;
+		}
+
+		.menu.open{
+			transform: translate(0,0);
+			border-radius: 0;
+		}
+		span.x{
+			position: absolute;
+		    top: 0.2em;
+		    left: 0.2em;
+		    color: #fff;
+		    font-family: tahoma;
+		    font-weight: 100;
+		    font-size: 3.5em;
+		    background-color: transparent;
+		    padding: 0.2em;
+		    opacity: 0.4;
+			transition: all 200ms cubic-bezier(0.57, 0.21, 0.69, 3.25);
+			will-change: transform;
+			transform: scale(0.70);
+		}
+
+		span.x:hover{
+			transform: scale(1);
+			transition: transform 300ms linear, border-radius 200ms 300ms ease;
+			opacity: 1;
+		}
+		span.x:active{
+			transform: scale(0.95);
+			color: orange;
+		}
+		.social ul li a i{
+			line-height: 1.5;
+		    transform: rotate(180deg);
+		    padding: 0 5px;
+		    font-size: 2em;
+		    padding: 0;
+		}
+		.social ul{
+			min-width: 65px;
+		}
+	</style>
+	<link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+	<div class="aside">
+		<div class="trigger">
+			<br><br>
+			<img src="img/menu_icon.svg" alt="menu icon">
+		</div>
+
+		<div class="social">
+			<ul>
+				<li><a href="https://github.com/julio899" target="_blank">GitHub</a></li>
+				<li><a href="http://linkedin.com/in/julio899/" target="_blank">LinkedIn</a></li>
+				<li><a href="https://stackoverflow.com/users/4929137/julio-vinachi" target="_blank"><i class="fab fa-stack-overflow" ></i></a></li>
+				<li><a href="https://profile.codersrank.io/user/julio899" target="_blank"><i class="fa fa-code" style="font-size: 1.7em;"></i></a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="title">
+		<h1>Full-Stack</h1>
+		<span>Julio Cesar Vinachi</span>
+	</div>
+	<div class="content">
+		<div class="about">
+			<h1>DEVELOPER</h1>
+			<ul class="desc">
+				<li> - Full Custom [ BootStrap 3/4, MaterializeCss ]</li>
+				<li> - JavaScript ES6 / ES5 / Vanilla</li>
+				<li> - Angular 2-7, AngularJs, VueJs, TypeScript</li>
+				<li> - POO, PHP, CodeIgniter, Laravel, Lumen, OpenCart</li>
+				<li> - API REST / REST Full</li>
+				<li> - Cloud Amazon AWS, RDS, S3 , VPS, Linux, ShellScript</li>
+				<li> - Git, GitHub, GitLab, Bitbucket</li>
+			</ul>
+			<button onclick="toProfile()"><span>Read More</span></button>
+		</div>
+		
+		<div class="concept">
+			<h2>Trending in</h2>
+			<p class="num">2019</p>
+		</div>
+
+	</div>
+
+	<div class="menu">
+		<span class="x" onclick="cierre()">X</span>
+		<ul>
+			<li onclick="cierre()">Web Desingning</li>
+			<li onclick="cierre()">Web Development</li>
+			<li onclick="cierre()">Responsive</li>
+			<li onclick="cierre()">Frontend</li>
+			<li onclick="cierre()">Backend</li>
+			<li onclick="cierre()">Supports</li>
+		</ul>
+	</div>
+<script src="js/jquery-3.4.1.slim.min.js"></script>
+<script>
+	$('.trigger').click(function(){
+		$('.menu').toggleClass('open');
+		$('.body').toggleClass('hidden');
+	});
+
+	function cierre(){
+		$('.trigger').click();
+	}
+	function toProfile(){
+		// window.location.href='';
+		window.open('https://julio899.github.io/perfil/','_blank');
+	}
+</script>
+</body>
+</html>
