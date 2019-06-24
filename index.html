@@ -271,6 +271,9 @@
 		.social ul{
 			min-width: 65px;
 		}
+		.cursor{
+			cursor: pointer;
+		}
 	</style>
 	<link rel="stylesheet" href="css/all.min.css">
 </head>
@@ -278,7 +281,7 @@
 	<div class="aside">
 		<div class="trigger">
 			<br><br>
-			<img src="img/menu_icon.svg" alt="menu icon">
+			<img class="cursor" src="img/menu_icon.svg" alt="menu icon">
 		</div>
 
 		<div class="social">
@@ -318,7 +321,7 @@
 	</div>
 
 	<div class="menu">
-		<span class="x" onclick="cierre()">X</span>
+		<span class="x cursor" onclick="cierre()">X</span>
 		<ul>
 			<li onclick="cierre()">Web Desingning</li>
 			<li onclick="cierre()">Web Development</li>
