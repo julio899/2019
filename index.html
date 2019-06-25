@@ -19,9 +19,17 @@
 			grid-template-rows: 1fr;
 			color: #21213d;
 			 
-			background-image: url('https://avatars3.githubusercontent.com/u/2575745?s=460&v=4');
+			/* 
+			background-image: url('https://avatars3.githubusercontent.com/u/2575745?s=460&v=4'); 
 			background-position: 97% 14vh;
-			background-repeat: no-repeat;
+			background-position: 100% 18vh;			
+			background-size: auto 87vh;
+			*/
+
+			background-image: url('img/02_D.jpg');
+			/* background-image: url('img/02.png'); */
+			background-repeat: no-repeat;	
+			background-position: 105% 14vh;					
 			background-size: auto 87vh;
 			
 		}
@@ -261,6 +269,18 @@
 			transform: scale(0.95);
 			color: orange;
 		}
+		img.x{
+		    position: absolute;
+		    left: 50px;
+		    top: 40px;
+		    transition: all 200ms cubic-bezier(0.57, 0.21, 0.69, 3.25);
+			will-change: transform;
+			width: 32px;
+			height: 32px;	
+		}
+		img.x:active{
+		 transform: scale(0.95);
+		}
 		.social ul li a i{
 			line-height: 1.5;
 		    transform: rotate(180deg);
@@ -321,7 +341,8 @@
 	</div>
 
 	<div class="menu">
-		<span class="x cursor" onclick="cierre()">X</span>
+		<!-- <span class="x cursor" onclick="cierre()">X</span> -->
+		<img class="x cursor" onclick="cierre()" src="img/menu_icon.svg" alt="menu icon">
 		<ul>
 			<li onclick="cierre()">Web Desingning</li>
 			<li onclick="cierre()">Web Development</li>
