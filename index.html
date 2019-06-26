@@ -329,6 +329,46 @@
 		.cursor{
 			cursor: pointer;
 		}
+		@media only screen and (max-width: 650px) {
+		  body {
+		  	grid-template-columns: minmax(150px,auto) minmax(90px, auto) 1fr;
+		  }
+		  .title {
+		    font-size: 1.3rem;
+		    margin-top: -9em;
+		    padding-bottom: 0px;
+		    width: max-content;
+		  }
+		  .content{
+		    font-size: 0.8rem;		  	
+		  }
+		  .content .about{
+		    width: 100%;
+		    color: azure;
+		    text-shadow: #333 1px 1px;	
+		    font-weight: 100;	  	
+		  }
+		  .content .about h1{
+		  	color: #21213d;
+		    text-shadow: #333 1px 1px 5px;	
+		   }
+		  .content .about .desc{
+		    font-size: 1.3em;
+		    font-style: italic;
+		    background-color: rgba(255,255,255,0.3);
+		    border-radius: 7px;
+		    padding: 10px;
+		   }
+		  .content .concept .num{
+		  	font-size: 9rem;
+		  }
+		  .content .concept h2{
+		    margin-block-start: 0em;
+		    padding-bottom: 1em;
+		    color: azure;
+		    text-shadow: #333 1px 1px;
+		  }
+		}
 	</style>
 	<link rel="stylesheet" href="css/all.min.css">
 </head>
