@@ -186,6 +186,12 @@
 			will-change: transform;
 
 		}
+		.content .about button.download{
+			background-image: linear-gradient(-90deg, #6bff00,#0d6403);
+		}
+		.content .about button.download span{
+			color:#000;
+		}
 
 		.content .about button:focus{
 			outline: none;
@@ -504,6 +510,7 @@
 				<li> - Git, GitHub, GitLab, Bitbucket</li>
 			</ul>
 			<button onclick="toProfile()"><span>Read More</span></button>
+			<button onclick="toCV()" class="download"><span>Download CV</span></button>
 		</div>
 		
 		<div class="concept">
@@ -535,6 +542,12 @@
 		$('.menu').toggleClass('open');
 		$('.body').toggleClass('hidden');
 	});
+	
+	function toCV()
+	{
+		console.log('toCV');
+		window.open('https://julio899.github.io/2019/docs/JulioVinachiCV.pdf','_blank');
+	}
 
 	function cierre(){
 		$('.trigger').click();
